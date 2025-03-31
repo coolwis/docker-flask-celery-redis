@@ -12,12 +12,26 @@ COPY . /api
 WORKDIR /api
 
 # install requirements
+# RUN pip install -r requirements.txt
+
+# =========================
+# my test uwsgi
+RUN apk add gcc libc-dev linux-headers
+RUN pip install --upgrade pip
+RUN pip install uwsgi
 RUN pip install -r requirements.txt
+RUN apk del gcc libc-dev linux-headers
+# =========================
 
 # expose the app port
 EXPOSE 5001
 
 # run the flask development server
-ENTRYPOINT [ "python" ]
+# ENTRYPOINT [ "python" ]
+# CMD [ "app.py" ]
 
-CMD [ "app.py" ]
+
+# =========================
+# my test uwsgi
+ENTRYPOINT ["uwsgi", "--ini", "/api/uwsgi.ini"]
+# =========================

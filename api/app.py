@@ -15,7 +15,9 @@ app.config.update(
 
 @app.route('/add/<int:param1>/<int:param2>')
 def add(param1: int, param2: int) -> str:
-    task = celery.send_task('tasks.add', args=[param1, param2], kwargs={})
+    task = celery.send_task('tasks.add', args=[param1, param2])
+    print("111111")
+    print(task)
     response = f"<a href='{url_for('check_task', task_id=task.id, external=True)}'>check status of {task.id} </a>"
     return response
 

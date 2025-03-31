@@ -1,5 +1,10 @@
 [![Build Status](https://travis-ci.org/dlesz/docker-flask-celery-redis-hotcode.svg?branch=master)](https://travis-ci.org/dlesz/docker-flask-celery-redis-hotcode)
 
+# origin git url 
+```bash
+https://github.com/mattkohl/docker-flask-celery-redis
+```
+
 # Docker Flask Celery Redis
 
 A basic [Docker Compose](https://docs.docker.com/compose/) template for orchestrating a [Flask](http://flask.pocoo.org/) application & a [Celery](http://www.celeryproject.org/) queue with [Redis](https://redis.io/)
@@ -7,7 +12,8 @@ A basic [Docker Compose](https://docs.docker.com/compose/) template for orchestr
 ### Installation
 
 ```bash
-git clone https://github.com/mattkohl/docker-flask-celery-redis
+# git clone https://github.com/mattkohl/docker-flask-celery-redis   ( origin code url )
+# git clone https://github.com/coolwis/docker-flask-celery-redis
 ```
 
 ### Build & Launch
